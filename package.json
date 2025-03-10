@@ -1,15 +1,16 @@
 {
   "name": "my-telegram-web3-bot",
   "version": "1.0.0",
-  "description": "A simple Telegram Web3 bot",
+  "description": "A Web3 Telegram Bot with Wallet Connect and Referral System",
   "main": "index.js",
-  "dependencies": {
-    "telegraf": "^4.7.0",
-    "dotenv": "^16.0.3"
-  },
   "scripts": {
     "start": "node index.js"
   },
-  "author": "NahidXSR",
-  "license": "MIT"
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2",
+    "node-telegram-bot-api": "^0.56.0",
+    "web3": "^1.7.0"
+  }
 }
