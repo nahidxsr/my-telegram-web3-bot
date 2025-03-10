@@ -1,14 +1,13 @@
-const { Telegraf } = require('telegraf');
-require('dotenv').config();
+const TelegramBot = require('node-telegram-bot-api');
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+// তোমার BotFather থেকে নেওয়া API Token এখানে বসাও
+const token = '7625765343:AAHT3yUTUtmKtSOv-EDhIYj5fhLynw-Icas;
 
-bot.start((ctx) => ctx.reply('Welcome! I am your Web3 Bot.'));
-bot.help((ctx) => ctx.reply('Send /start to get started!'));
+const bot = new TelegramBot(token, { polling: true });
 
-bot.launch();
+bot.on('message', (msg) => {
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId, 'Hello! Your Telegram bot is running successfully.');
+});
+
 console.log('Bot is running...');
-
-// Handle graceful stop
-process.once('SIGINT', () => bot.stop('SIGINT'));
-process.once('SIGTERM', () => bot.stop('SIGTERM'));
